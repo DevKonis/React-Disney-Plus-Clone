@@ -64,23 +64,24 @@ const Row = ({ title, id, fetchUrl }) => {
           {movies.map((movie) => (
             <SwiperSlide key={movie.id}>
               <Wrap>
-                {movie.backdrop_path && (
-                  <img
-                    key={movie.id}
-                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                    alt={movie.name}
-                    onClick={() => handleClick(movie)}
-                  />
-                )}
+                <img
+                  key={movie.id}
+                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                  alt={movie.name}
+                  onClick={() => handleClick(movie)}
+                />
               </Wrap>
             </SwiperSlide>
           ))}
         </Content>
       </Swiper>
 
-      {modalOpen && (
-        <MovieModal {...movieSelected} setModalOpen={setModalOpen} />
-      )}
+      {modalOpen && 
+        <MovieModal 
+          {...movieSelected} 
+          setModalOpen={setModalOpen} 
+        />
+      }
     </Container>
   );
 };
@@ -102,7 +103,7 @@ const Wrap = styled.div`
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   border: 3px solid rgba(249, 249, 249, 0.1);
 
   img {
@@ -114,6 +115,7 @@ const Wrap = styled.div`
     position: absolute;
     width: 100%;
     transition: opacity 500ms ease-in-out;
+    z-index: 1;
   }
   &:hover {
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
