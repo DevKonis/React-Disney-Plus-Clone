@@ -7,11 +7,13 @@ import axios from "axios";
 //   },
 // };
 
+const { api_key } = process.env;
+
 const instance = axios.create({
-  baseURL: "http://api.themoviedb.org/3",
+  baseURL: "https://api.themoviedb.org/3",
   // https: config,
   params: {
-    api_key: "923c2f2c832ee1662f24164cf921918c", 
+    api_key: `${api_key}`,
     language: "ko-KR", 
   },
 });
