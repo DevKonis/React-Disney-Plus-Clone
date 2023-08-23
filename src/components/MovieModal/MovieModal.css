@@ -7,7 +7,7 @@
 }
 
 .presentation {
-  z-index: 1200;
+  z-index: 3;
   width: 100%;
   position: absolute;
 }
@@ -17,7 +17,7 @@
   right: 20px;
   top: 20px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 3;
   color: white;
 }
 
@@ -106,7 +106,7 @@
 
   .modal {
     overflow-y: scroll;
-    z-index: 10;
+    z-index: 3;
   }
   
 }

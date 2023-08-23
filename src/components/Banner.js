@@ -5,6 +5,7 @@ import "./Banner.css";
 import styled from "styled-components";
 
 const Banner = () => {
+
   const [movie, setMovie] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -19,11 +20,11 @@ const Banner = () => {
         Math.floor(Math.random() * response.data.results.length)
       ].id;
 
-    const { data: movieDetails } = await axios.get(`movie/${movieId}`, {
+    const { data: movieDetail } = await axios.get(`movie/${movieId}`, {
       params: { append_to_response: "videos" },
     });
 
-    setMovie(movieDetails);
+    setMovie(movieDetail);
   };
 
   const truncate = (str, n) => {
@@ -78,11 +79,11 @@ const Banner = () => {
                 className="banner__button play"
                 onClick={() => setIsClicked(true)}
               >
-                play
+                Play
               </button>
             )}
           </div>
-          <p className="banner__description">{truncate(movie.overview)}</p>
+          <p className="banner__description">{truncate(movie.overview, 100)}</p>
         </div>
         <div className="banner--fadeBottom" />
       </header>

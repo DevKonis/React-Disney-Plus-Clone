@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import Banner from '../../components/Banner'
-import Category from '../../components/Category'
-import Nav from '../../components/Nav'
-import Row from '../../components/Row'
-import requests from '../../api/request'
+import React from "react";
+import styled from "styled-components";
+import Banner from "../../components/Banner";
+import Category from "../../components/Category";
+import Nav from "../../components/Nav";
+import Row from "../../components/Row";
+import requests from "../../api/request";
 
 const MainPage = () => {
   return (
@@ -14,13 +14,21 @@ const MainPage = () => {
       <Category />
       <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies} />
+      <Row
+        title="Action Movies"
+        id="AM"
+        fetchUrl={requests.fetchActionMovies}
+      />
+      <Row
+        title="Comedy Movies"
+        id="CM"
+        fetchUrl={requests.fetchComedyMovies}
+      />
     </Container>
-  )
-}
+  );
+};
 
-export default MainPage
+export default MainPage;
 
 const Container = styled.main`
   position: relative;
